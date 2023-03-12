@@ -7,7 +7,7 @@ import 'dart:ui';
 /// This extension represents an efficient way to represent a Color object in Dart using Hex Values.
 ///
 /// **[author]:** Jack Meng
-/// 
+///
 /// **[version]:** 1.0
 extension HexColor on Color {
   static Color fromHex(String hexString) {
@@ -15,6 +15,28 @@ extension HexColor on Color {
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
     buffer.write(hexString.replaceFirst('#', ''));
     return Color(int.parse(buffer.toString(), radix: 16));
+  }
+
+  Color darker(int percent) {
+    assert(1 <= percent && percent <= 100);
+    final factor = 1 - percent / 100.0;
+    return Color.fromARGB(
+      alpha,
+      (red * factor).toInt() & 0xFF,
+      (green * factor).toInt() & 0xFF,
+      (blue * factor).toInt() & 0xFF,
+    );
+  }
+
+  Color lighter(int percent) {
+    assert(1 <= percent && percent <= 100);
+    final factor = 1 + percent / 100.0;
+    return Color.fromARGB(
+      alpha,
+      (red * factor).toInt() & 0xFF,
+      (green * factor).toInt() & 0xFF,
+      (blue * factor).toInt() & 0xFF,
+    );
   }
 
   String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'

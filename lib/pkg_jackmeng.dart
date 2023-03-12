@@ -10,3 +10,6 @@
 library pkg_jackmeng;
 
 export 'src/color.dart';
+export 'src/linked_list.dart';
+export 'src/util.dart';
+export 'src/min_heap.dart';
