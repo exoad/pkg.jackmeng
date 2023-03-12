@@ -22,9 +22,9 @@ extension HexColor on Color {
     final factor = 1 - percent / 100.0;
     return Color.fromARGB(
       alpha,
-      (red * factor).toInt() & 0xFF,
-      (green * factor).toInt() & 0xFF,
-      (blue * factor).toInt() & 0xFF,
+      (red * factor).round(),
+      (green * factor).round(),
+      (blue * factor).round(),
     );
   }
 
@@ -33,9 +33,9 @@ extension HexColor on Color {
     final factor = 1 + percent / 100.0;
     return Color.fromARGB(
       alpha,
-      (red * factor).toInt() & 0xFF,
-      (green * factor).toInt() & 0xFF,
-      (blue * factor).toInt() & 0xFF,
+      (red * factor).round(),
+      (green * factor).round(),
+      (blue * factor).round(),
     );
   }
 
