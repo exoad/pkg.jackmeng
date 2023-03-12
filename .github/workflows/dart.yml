@@ -13,12 +13,10 @@ on:
 
 jobs:
   build:
+    name: test-dart-code
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-
       - name: dependencies check
         uses: geowatson/flutter-latest@1.0.0
         with:
