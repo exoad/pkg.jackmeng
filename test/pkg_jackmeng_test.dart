@@ -8,6 +8,9 @@ void main() {
     expect(true, true);
   });
 
+}
+
+void newMethod() {
   group('ColorExtensions', () {
     test('darker returns a darker color', () {
       const originalColor = Color.fromRGBO(255, 255, 255, 1.0);
