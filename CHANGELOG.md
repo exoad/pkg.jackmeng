@@ -1,4 +1,6 @@
-Current version: 0.0.1
+Current version: 0.0.2
+
+Added new plugins
 
 <!--
  Copyright 2023 Jack Meng. All rights reserved.
