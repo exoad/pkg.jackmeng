@@ -27,3 +27,14 @@ Future<String> executeCommand(String command, List<String> arguments) async {
     throw Exception('Command failed with exit code ${result.exitCode}: $error');
   }
 }
+
+void execOnlyDesktop(void Function() runnable) {
+  if (Platform.isFuchsia ||
+      Platform.isLinux ||
+      Platform.isMacOS ||
+      Platform.isWindows) runnable();
+}
+
+void execOnlyMobile(void Function() runnable) {
+  if (Platform.isIOS || Platform.isAndroid) runnable();
+}
