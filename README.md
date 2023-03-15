@@ -11,3 +11,8 @@ Coming from pure vanilla Java (i.e. without ever touching that much JitPack, Mav
 If you like, visit my Java STL [here](https://github.com/exoad/com.jackmeng)
 
 **This project is licensed freely for use under the [BSD-3 "REVISED" License](./LICENSE)**
+
+# support
+
+This library will only support all desktop versions. This means no Web, Android, and iOS.
+
